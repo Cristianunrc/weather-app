@@ -1,0 +1,40 @@
+<!-- Title -->
+<div class="text-center mt-5">
+  <p class="fs-2 fw-semibold custom-p">
+    <u class="custom-u">
+      Escribe una ciudad y su país y obtén su información meteorológica
+    </u>
+  </p>
+</div>
+
+<div class="container p-4 custom-container">  
+  <!-- First box -->
+  <div class="card card-body">
+    <form (submit)="submitLocation(cityName, countryCode)">
+      <input type="text" class="form-control" placeholder="Nombre de la ciudad" #cityName required>
+      <input type="text" class="form-control mt-4" placeholder="Nombre del país" #countryCode required>
+      <div class="text-center mt-2">
+        <button class="btn btn-primary btn-block mt-4">
+          <i class="fa-solid fa-paper-plane me-3"></i>
+          Obtener clima
+        </button>
+      </div>
+    </form>
+  </div>
+  
+  <!-- Second box -->
+  <div *ngIf="weather" class="card card-body">
+    <p class="text-center fs-4 fw-bold">
+      {{weather.name}} 
+      <img [src]="imageWeather" alt="Icon weather">
+    </p>
+    <p><u>Descripción</u>: {{weather.weather[0].description}}</p>
+    <p><u>Temperatura actual</u>: {{weather.main.temp}} ºC</p>
+    <p><u>Temperatura máxima</u>: {{weather.main.temp_max}} ºC</p>
+    <p><u>Temperatura mínima</u>: {{weather.main.temp_min}} ºC</p>
+    <p><u>Sensación térmica</u>: {{weather.main.feels_like}} ºC</p>
+    <p><u>Humedad</u>: {{weather.main.humidity}} %</p>
+    <p><u>Velocidad del viento</u>: {{weather.wind.speed}} m/s</p>
+    <p><u>Presión atmosférica</u>: {{weather.main.pressure}} hPa</p>
+  </div>
+</div>

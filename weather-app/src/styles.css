@@ -1,0 +1,26 @@
+body {
+  background: #2980B9;
+  background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Two boxes */
+.custom-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Letter of title */
+@font-face {
+  font-family: 'Anta-Regular';
+  src: url('./assets/fonts/Anta-Regular.ttf');
+}
+
+.custom-p {
+  font-family: 'Anta-Regular';
+  color: #444;
+}
+
+.custom-u {
+  color: #444;
+}
